@@ -5,10 +5,12 @@ import os
 
 app = Flask(__name__)
 
-BOT_TOKEN = os.getenv("8519274473:AAEV9veBim0w5PUsVvLrKy9-EDIJ-Y6WYLE")
-SHOP_ID = os.getenv("1226037")
-SECRET_KEY = os.getenv("live_NP-XeY-uNpFqBlal_HczVDBXQA9l_TP09itMjMN5QSU")
+BOT_TOKEN = os.getenv("BOT_TOKEN")
+SHOP_ID = os.getenv("SHOP_ID")
+SECRET_KEY = os.getenv("SECRET_KEY")
+
 print("DEBUG BOT_TOKEN =", repr(BOT_TOKEN))
+
 bot = telegram.Bot(token=BOT_TOKEN)
 
 Configuration.account_id = SHOP_ID
@@ -27,5 +29,4 @@ def yookassa_webhook():
     return "OK", 200
 
 if __name__ == "__main__":
-
     app.run(host="0.0.0.0", port=5000)
